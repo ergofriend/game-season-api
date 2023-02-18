@@ -9,6 +9,12 @@ export const router = OpenAPIRouter({
       description: 'https://github.com/ergofriend/game-season-api',
       version: '1.0',
     },
+    servers: [
+      {
+        url: 'https://game-season-api.ergofriend.workers.dev/',
+        description: 'Production',
+      },
+    ],
   },
 })
 applyIPEndpoint(router)

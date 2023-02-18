@@ -6,5 +6,8 @@
   "editor.formatOnSave": true,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "file:///Users/ergofriend/ghq/github.com/ErgoFriend/game-season-api/.github/workflows/deploy.yaml"
   }
 }

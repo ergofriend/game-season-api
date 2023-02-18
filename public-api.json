@@ -1,0 +1,577 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Game Season API",
+    "description": "https://github.com/ergofriend/game-season-api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/apex/current": {
+      "get": {
+        "operationId": "get_currentSeason",
+        "tags": [
+          "Apex Legends"
+        ],
+        "summary": "get current season",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "season": {
+                      "type": "object",
+                      "properties": {
+                        "number": {
+                          "type": "integer",
+                          "example": 15
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Eclipse"
+                        },
+                        "start": {
+                          "type": "string",
+                          "example": "2021-03-09T00:00:00Z"
+                        },
+                        "end": {
+                          "type": "string",
+                          "example": "2021-06-08T00:00:00Z"
+                        },
+                        "split": {
+                          "type": "string",
+                          "example": "2021-06-08T00:00:00Z"
+                        }
+                      },
+                      "required": [
+                        "number",
+                        "name",
+                        "start",
+                        "end",
+                        "split"
+                      ]
+                    },
+                    "progress": {
+                      "type": "object",
+                      "properties": {
+                        "split": {
+                          "type": "integer",
+                          "example": 2
+                        },
+                        "splitProgress": {
+                          "type": "integer",
+                          "example": 30.31
+                        },
+                        "seasonProgress": {
+                          "type": "integer",
+                          "example": 70.9
+                        }
+                      },
+                      "required": [
+                        "split",
+                        "splitProgress",
+                        "seasonProgress"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "season",
+                    "progress"
+                  ]
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Not found current season",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Not found current season"
+                    }
+                  },
+                  "required": [
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apex/history": {
+      "get": {
+        "operationId": "get_getHistory",
+        "tags": [
+          "Apex Legends"
+        ],
+        "summary": "get history",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "history": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "number": {
+                            "type": "integer",
+                            "example": 15
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Eclipse"
+                          },
+                          "start": {
+                            "type": "string",
+                            "example": "2021-03-09T00:00:00Z"
+                          },
+                          "end": {
+                            "type": "string",
+                            "example": "2021-06-08T00:00:00Z"
+                          },
+                          "split": {
+                            "type": "string",
+                            "example": "2021-06-08T00:00:00Z"
+                          }
+                        },
+                        "required": [
+                          "number",
+                          "name",
+                          "start",
+                          "end",
+                          "split"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "history"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apex/{season}": {
+      "get": {
+        "operationId": "get_getSeason",
+        "tags": [
+          "Apex Legends"
+        ],
+        "summary": "get season",
+        "parameters": [
+          {
+            "description": "Season number",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "description": "Season number"
+            },
+            "name": "season",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "season": {
+                      "type": "object",
+                      "properties": {
+                        "number": {
+                          "type": "integer",
+                          "example": 15
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Eclipse"
+                        },
+                        "start": {
+                          "type": "string",
+                          "example": "2021-03-09T00:00:00Z"
+                        },
+                        "end": {
+                          "type": "string",
+                          "example": "2021-06-08T00:00:00Z"
+                        },
+                        "split": {
+                          "type": "string",
+                          "example": "2021-06-08T00:00:00Z"
+                        }
+                      },
+                      "required": [
+                        "number",
+                        "name",
+                        "start",
+                        "end",
+                        "split"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "season"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found season",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Not found season"
+                    }
+                  },
+                  "required": [
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/valorant/current": {
+      "get": {
+        "operationId": "get_currentSeason",
+        "tags": [
+          "Valorant"
+        ],
+        "summary": "get current season",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "season": {
+                      "type": "object",
+                      "properties": {
+                        "number": {
+                          "type": "integer",
+                          "example": 15
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Eclipse"
+                        },
+                        "start": {
+                          "type": "string",
+                          "example": "2021-03-09T00:00:00Z"
+                        },
+                        "end": {
+                          "type": "string",
+                          "example": "2021-06-08T00:00:00Z"
+                        },
+                        "acts": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "number": {
+                                "type": "integer",
+                                "example": 15
+                              },
+                              "start": {
+                                "type": "string",
+                                "example": "2021-03-09T00:00:00Z"
+                              },
+                              "end": {
+                                "type": "string",
+                                "example": "2021-06-08T00:00:00Z"
+                              }
+                            },
+                            "required": [
+                              "number",
+                              "start",
+                              "end"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "number",
+                        "name",
+                        "start",
+                        "end",
+                        "acts"
+                      ]
+                    },
+                    "progress": {
+                      "type": "object",
+                      "properties": {
+                        "act": {
+                          "type": "integer",
+                          "example": 2
+                        },
+                        "seasonProgress": {
+                          "type": "integer",
+                          "example": 70.9
+                        },
+                        "actProgress": {
+                          "type": "integer",
+                          "example": 89.31
+                        }
+                      },
+                      "required": [
+                        "act",
+                        "seasonProgress",
+                        "actProgress"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "season",
+                    "progress"
+                  ]
+                }
+              }
+            }
+          },
+          "410": {
+            "description": "Not found current season",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Not found current season"
+                    }
+                  },
+                  "required": [
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/valorant/history": {
+      "get": {
+        "operationId": "get_getHistory",
+        "tags": [
+          "Valorant"
+        ],
+        "summary": "get history",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "history": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "number": {
+                            "type": "integer",
+                            "example": 15
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Eclipse"
+                          },
+                          "start": {
+                            "type": "string",
+                            "example": "2021-03-09T00:00:00Z"
+                          },
+                          "end": {
+                            "type": "string",
+                            "example": "2021-06-08T00:00:00Z"
+                          },
+                          "acts": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "number": {
+                                  "type": "integer",
+                                  "example": 15
+                                },
+                                "start": {
+                                  "type": "string",
+                                  "example": "2021-03-09T00:00:00Z"
+                                },
+                                "end": {
+                                  "type": "string",
+                                  "example": "2021-06-08T00:00:00Z"
+                                }
+                              },
+                              "required": [
+                                "number",
+                                "start",
+                                "end"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "number",
+                          "name",
+                          "start",
+                          "end",
+                          "acts"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "history"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/valorant/{season}": {
+      "get": {
+        "operationId": "get_getSeason",
+        "tags": [
+          "Valorant"
+        ],
+        "summary": "get season",
+        "parameters": [
+          {
+            "description": "Season number",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "description": "Season number"
+            },
+            "name": "season",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "season": {
+                      "type": "object",
+                      "properties": {
+                        "number": {
+                          "type": "integer",
+                          "example": 15
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Eclipse"
+                        },
+                        "start": {
+                          "type": "string",
+                          "example": "2021-03-09T00:00:00Z"
+                        },
+                        "end": {
+                          "type": "string",
+                          "example": "2021-06-08T00:00:00Z"
+                        },
+                        "acts": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "number": {
+                                "type": "integer",
+                                "example": 15
+                              },
+                              "start": {
+                                "type": "string",
+                                "example": "2021-03-09T00:00:00Z"
+                              },
+                              "end": {
+                                "type": "string",
+                                "example": "2021-06-08T00:00:00Z"
+                              }
+                            },
+                            "required": [
+                              "number",
+                              "start",
+                              "end"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "number",
+                        "name",
+                        "start",
+                        "end",
+                        "acts"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "season"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found season",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Not found season"
+                    }
+                  },
+                  "required": [
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

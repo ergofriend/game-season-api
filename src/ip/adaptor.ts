@@ -1,0 +1,118 @@
+import { OpenAPIRoute, Path, Str } from '@cloudflare/itty-router-openapi'
+
+import { Adaptor, CommonSeason, HandleProps } from '../type'
+import { getCurrentSeason } from '../utils/getCurrentSeason'
+
+type Props<T extends CommonSeason> = {
+  ip: string
+  data: Record<number, T>
+  SeasonSchema: object
+  ProgressSchema: object
+  getProgress: (season: T) => object
+}
+
+export const newAdaptor = <T extends CommonSeason>({
+  ip,
+  data,
+  SeasonSchema,
+  ProgressSchema,
+  getProgress,
+}: Props<T>): Adaptor => {
+  const tags = [ip]
+  class currentSeason extends OpenAPIRoute {
+    static schema = {
+      tags,
+      summary: 'get current season',
+      parameters: {},
+      responses: {
+        '200': {
+          schema: {
+            season: SeasonSchema,
+            progress: ProgressSchema,
+          },
+        },
+        '410': {
+          description: 'Not found current season',
+          schema: {
+            message: new Str({ example: 'Not found current season' }),
+          },
+        },
+      },
+    }
+
+    async handle() {
+      const season = getCurrentSeason(data)
+      if (!season) {
+        return new Response('Not found current season', { status: 410 })
+      }
+      return {
+        season,
+        progress: getProgress(season),
+      }
+    }
+  }
+
+  class getSeason extends OpenAPIRoute {
+    static schema = {
+      tags,
+      summary: 'get season',
+      parameters: {
+        season: Path(Number, {
+          description: 'Season number',
+          required: true,
+        }),
+      },
+      responses: {
+        '200': {
+          schema: {
+            season: SeasonSchema,
+          },
+        },
+        '404': {
+          description: 'Not found season',
+          schema: {
+            message: new Str({ example: 'Not found season' }),
+          },
+        },
+      },
+    }
+
+    async handle(props: HandleProps) {
+      const seasonNumber = props.params['season']
+      if (!seasonNumber)
+        return new Response('Not found season', { status: 404 })
+
+      const season: T | undefined = data[Number(seasonNumber)]
+      if (!season) return new Response('Not found season', { status: 404 })
+      return season
+    }
+  }
+
+  class getHistory extends OpenAPIRoute {
+    static schema = {
+      tags,
+      summary: 'get history',
+      parameters: {},
+      responses: {
+        '200': {
+          schema: {
+            history: [SeasonSchema],
+          },
+        },
+      },
+    }
+
+    async handle() {
+      const history = Object.values(data)
+      return { history }
+    }
+  }
+
+  const adaptor: Adaptor = {
+    currentSeason: currentSeason as unknown as OpenAPIRoute,
+    getSeason: getSeason as unknown as OpenAPIRoute,
+    getHistory: getHistory as unknown as OpenAPIRoute,
+  }
+
+  return adaptor
+}

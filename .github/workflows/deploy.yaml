@@ -20,3 +20,9 @@ jobs:
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
+      - name: Deploy API documentation
+        uses: bump-sh/github-action@v1
+        with:
+          doc: ${{secrets.BUMP_DOC}}
+          token: ${{secrets.BUMP_TOKEN}}
+          file: ./public-api.json

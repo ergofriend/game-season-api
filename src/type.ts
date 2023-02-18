@@ -13,6 +13,11 @@ export type Adaptor = {
   getHistory: OpenAPIRoute
 }
 
+export type Route = {
+  path: string
+  adaptor: Adaptor
+}
+
 export type HandleProps = {
   params: Record<string, string | undefined>
   query: Record<string, unknown>

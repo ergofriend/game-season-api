@@ -12,16 +12,20 @@ const getProgress = (season: Season) => {
 
   return {
     split: splitNumber,
-    splitProgress: getProgressPercent({
-      start: new Date(splitPeriod[0]),
-      end: new Date(splitPeriod[1]),
-      now: new Date(),
-    }),
-    seasonProgress: getProgressPercent({
-      start: new Date(season.start),
-      end: new Date(season.end),
-      now: new Date(),
-    }),
+    splitProgress: String(
+      getProgressPercent({
+        start: new Date(splitPeriod[0]),
+        end: new Date(splitPeriod[1]),
+        now: new Date(),
+      }),
+    ),
+    seasonProgress: String(
+      getProgressPercent({
+        start: new Date(season.start),
+        end: new Date(season.end),
+        now: new Date(),
+      }),
+    ),
   }
 }
 

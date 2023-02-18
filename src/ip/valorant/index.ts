@@ -20,16 +20,20 @@ const getProgress = (season: Season) => {
   if (currentAct === null) throw new Error('No act found')
   return {
     act: currentAct.number,
-    actProgress: getProgressPercent({
-      start: new Date(currentAct.start),
-      end: new Date(currentAct.end),
-      now: new Date(),
-    }),
-    seasonProgress: getProgressPercent({
-      start: new Date(season.start),
-      end: new Date(season.end),
-      now: new Date(),
-    }),
+    actProgress: String(
+      getProgressPercent({
+        start: new Date(currentAct.start),
+        end: new Date(currentAct.end),
+        now: new Date(),
+      }),
+    ),
+    seasonProgress: String(
+      getProgressPercent({
+        start: new Date(season.start),
+        end: new Date(season.end),
+        now: new Date(),
+      }),
+    ),
   }
 }
 

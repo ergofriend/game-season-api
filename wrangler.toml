@@ -2,7 +2,3 @@ name = "game-season-api"
 compatibility_date = "2023-02-10"
 
 main = "src/index.ts"
-
-rules = [
-  { type = "Text", globs = ["**/*.csv"], fallthrough = true }
-]

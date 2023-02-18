@@ -8,7 +8,9 @@
     "generate": "node --require esbuild-register ./scripts/openapi.ts",
     "dev": "wrangler dev",
     "build": "wrangler publish --dry-run --outdir=dist",
-    "test": "jest"
+    "pretest": "node --require esbuild-register ./scripts/start-server.ts",
+    "test": "jest",
+    "posttest": "sh ./scripts/kill-server.sh"
   },
   "dependencies": {
     "@cloudflare/itty-router-openapi": "^0.0.14"
@@ -23,7 +25,7 @@
     "@types/node": "^18.13.0",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
-    "axios": "1.1.0",
+    "axios": "^1.3.3",
     "bump-cli": "^2.5.0",
     "dayjs": "^1.11.7",
     "esbuild-register": "^3.4.2",

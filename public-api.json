@@ -62,12 +62,12 @@
                           "example": 2
                         },
                         "splitProgress": {
-                          "type": "integer",
-                          "example": 30.31
+                          "type": "string",
+                          "example": "30.4"
                         },
                         "seasonProgress": {
-                          "type": "integer",
-                          "example": 70.9
+                          "type": "string",
+                          "example": "73.2"
                         }
                       },
                       "required": [
@@ -335,12 +335,12 @@
                           "example": 2
                         },
                         "seasonProgress": {
-                          "type": "integer",
-                          "example": 70.9
+                          "type": "string",
+                          "example": "70"
                         },
                         "actProgress": {
-                          "type": "integer",
-                          "example": 89.31
+                          "type": "string",
+                          "example": "89.3"
                         }
                       },
                       "required": [

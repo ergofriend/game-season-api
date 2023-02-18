@@ -30,6 +30,6 @@ export const SeasonSchema = {
 
 export const ProgressSchema = {
   act: new Int({ example: 2 }),
-  seasonProgress: new Int({ example: 70.9 }),
-  actProgress: new Int({ example: 89.31 }),
+  seasonProgress: new Str({ example: '70' }),
+  actProgress: new Str({ example: '89.3' }),
 }

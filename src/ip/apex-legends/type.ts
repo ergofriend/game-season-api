@@ -18,6 +18,6 @@ export const SeasonSchema = {
 
 export const ProgressSchema = {
   split: new Int({ example: 2 }),
-  splitProgress: new Int({ example: 30.31 }),
-  seasonProgress: new Int({ example: 70.9 }),
+  splitProgress: new Str({ example: '30.4' }),
+  seasonProgress: new Str({ example: '73.2' }),
 }

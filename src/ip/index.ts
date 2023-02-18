@@ -1,6 +1,6 @@
 import { OpenAPIRouterSchema } from '@cloudflare/itty-router-openapi'
 
-import { Adaptor } from '../type'
+import { Adaptor, Route } from '../type'
 import { apex } from './apex-legends'
 import { valorant } from './valorant'
 
@@ -14,7 +14,13 @@ const applyBase = (
   router.get(`/${ip}/:season`, adaptor.getSeason)
 }
 
+export const routes: Route[] = [
+  { path: 'apex', adaptor: apex },
+  { path: 'valorant', adaptor: valorant },
+]
+
 export const applyIPEndpoint = (router: OpenAPIRouterSchema) => {
-  applyBase(router, 'apex', apex)
-  applyBase(router, 'valorant', valorant)
+  routes.forEach(({ path, adaptor }) => {
+    applyBase(router, path, adaptor)
+  })
 }

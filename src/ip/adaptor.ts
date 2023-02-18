@@ -2,6 +2,7 @@ import { OpenAPIRoute, Path, Str } from '@cloudflare/itty-router-openapi'
 
 import { Adaptor, CommonSeason, HandleProps } from '../type'
 import { getCurrentSeason } from '../utils/getCurrentSeason'
+import { newResponse } from '../utils/newResponse'
 
 type Props<T extends CommonSeason> = {
   ip: string
@@ -43,12 +44,12 @@ export const newAdaptor = <T extends CommonSeason>({
     async handle() {
       const season = getCurrentSeason(data)
       if (!season) {
-        return new Response('Not found current season', { status: 410 })
+        return newResponse({ message: 'Not found current season' }, 410)
       }
-      return {
+      return newResponse({
         season,
         progress: getProgress(season),
-      }
+      })
     }
   }
 
@@ -80,11 +81,11 @@ export const newAdaptor = <T extends CommonSeason>({
     async handle(props: HandleProps) {
       const seasonNumber = props.params['season']
       if (!seasonNumber)
-        return new Response('Not found season', { status: 404 })
+        return newResponse({ message: 'Not found season' }, 404)
 
       const season: T | undefined = data[Number(seasonNumber)]
-      if (!season) return new Response('Not found season', { status: 404 })
-      return season
+      if (!season) return newResponse({ message: 'Not found season' }, 404)
+      return newResponse({ season })
     }
   }
 
@@ -104,7 +105,7 @@ export const newAdaptor = <T extends CommonSeason>({
 
     async handle() {
       const history = Object.values(data)
-      return { history }
+      return newResponse({ history })
     }
   }
 

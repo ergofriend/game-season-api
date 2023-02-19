@@ -4,7 +4,7 @@ This is a simple API that returns the current season and progress percentage of 
 
 ### API
 
-https://game-season-api.ergofriend.workers.dev
+https://game-season-api.kasu.dev
 
 ### Documentation
 

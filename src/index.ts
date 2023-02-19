@@ -11,7 +11,7 @@ export const router = OpenAPIRouter({
     },
     servers: [
       {
-        url: 'https://game-season-api.ergofriend.workers.dev/',
+        url: 'https://game-season-api.kasu.dev/',
         description: 'Production',
       },
     ],

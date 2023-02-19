@@ -1,6 +1,6 @@
 # Game Season API
 
-This is a simple API that returns the current season and proggress percentage of a game.
+This is a simple API that returns the current season and progress percentage of a game.
 
 ### API
 

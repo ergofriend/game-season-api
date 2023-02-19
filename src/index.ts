@@ -28,6 +28,8 @@ export default {
     if (path === '/')
       return Response.redirect('https://bump.sh/kasu/doc/game-season-api', 301)
 
+    if (path === '/health') return new Response(null, { status: 200 })
+
     return router
       .handle(request)
       .then(response => {

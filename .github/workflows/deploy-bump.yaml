@@ -1,9 +1,11 @@
-name: deploy
+name: deploy to bump.sh
 
 on:
   push:
     branches:
       - main
+    paths:
+      - './public-api.json'
 
 jobs:
   deploy:
@@ -11,15 +13,6 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - name: Install Wrangler
-        run: yarn install --frozen-lockfile
-      - name: Publish
-        uses: cloudflare/wrangler-action@2.0.0
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
       - name: Deploy API documentation
         uses: bump-sh/github-action@v1
         with:

@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - './public-api.json'
+      - 'public-api.json'
   workflow_dispatch:
 
 jobs:

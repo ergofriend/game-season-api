@@ -8,9 +8,7 @@
     "generate": "node --require esbuild-register ./scripts/openapi.ts",
     "dev": "wrangler dev",
     "build": "wrangler publish --dry-run --outdir=dist",
-    "pretest": "node --require esbuild-register ./scripts/start-server.ts",
-    "test": "jest",
-    "posttest": "sh ./scripts/kill-server.sh"
+    "test": "jest"
   },
   "dependencies": {
     "@cloudflare/itty-router-openapi": "^0.0.14"
@@ -37,6 +35,7 @@
     "prettier": "^2.8.4",
     "ts-jest": "^29.0.5",
     "typescript": "^4.9.5",
+    "wait-port": "^1.0.4",
     "wrangler": "2.9.1"
   }
 }

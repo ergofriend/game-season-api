@@ -1,4 +1,4 @@
-name: deploy to cloudflare workers
+name: test ci
 
 on:
   push:
@@ -6,16 +6,22 @@ on:
       - main
     paths:
       - 'src/**'
-      - 'wrangler.toml'
+      - 'tests/**'
+      - 'jest.config.js'
   pull_request:
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy
+    name: Test
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Setup yarn
+        run: npm install -g yarn
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
@@ -24,7 +30,3 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Test
         run: yarn test
-      - name: Publish
-        uses: cloudflare/wrangler-action@2.0.0
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}

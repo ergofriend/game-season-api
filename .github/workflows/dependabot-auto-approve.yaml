@@ -8,14 +8,19 @@ jobs:
   dependabot:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
+    env:
+      PR_URL: ${{github.event.pull_request.html_url}}
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
       - name: Dependabot metadata
         id: metadata
         uses: dependabot/fetch-metadata@v1
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
+      - name: Skip if major version update
+        if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-major' }}
+        run: exit 0
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
-        env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Enable auto-merge
+        run: gh pr merge --merge --auto "$PR_URL"

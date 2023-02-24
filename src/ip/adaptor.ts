@@ -23,7 +23,7 @@ export const newAdaptor = <T extends CommonSeason>({
   class currentSeason extends OpenAPIRoute {
     static schema = {
       tags,
-      summary: 'get current season',
+      summary: `Current ${ip} Season`,
       parameters: {},
       responses: {
         '200': {
@@ -56,7 +56,7 @@ export const newAdaptor = <T extends CommonSeason>({
   class getSeason extends OpenAPIRoute {
     static schema = {
       tags,
-      summary: 'get season',
+      summary: `${ip} Season`,
       parameters: {
         season: Path(Number, {
           description: 'Season number',
@@ -92,7 +92,7 @@ export const newAdaptor = <T extends CommonSeason>({
   class getHistory extends OpenAPIRoute {
     static schema = {
       tags,
-      summary: 'get history',
+      summary: `${ip} Season History`,
       parameters: {},
       responses: {
         '200': {

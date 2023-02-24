@@ -8,6 +8,9 @@ jobs:
   dependabot:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
+    env:
+      PR_URL: ${{github.event.pull_request.html_url}}
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
       - name: Dependabot metadata
         id: metadata
@@ -16,6 +19,5 @@ jobs:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
-        env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Enable auto-merge
+        run: gh pr merge --merge --auto "$PR_URL"

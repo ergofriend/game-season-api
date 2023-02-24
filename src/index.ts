@@ -2,6 +2,8 @@ import { OpenAPIRouter } from '@cloudflare/itty-router-openapi'
 
 import { applyIPEndpoint } from './ip'
 
+export const SERVER_URL = 'https://game-season-api.kasu.dev'
+
 export const router = OpenAPIRouter({
   schema: {
     info: {
@@ -11,7 +13,7 @@ export const router = OpenAPIRouter({
     },
     servers: [
       {
-        url: 'https://game-season-api.kasu.dev/',
+        url: SERVER_URL,
         description: 'Production',
       },
     ],

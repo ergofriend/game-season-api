@@ -1,28 +1,50 @@
-import axios from 'axios'
 import jestOpenAPI from 'jest-openapi'
 
 import { routes } from '.'
+import { router, SERVER_URL } from '..'
 import schema from '../../public-api.json'
-import { TEST_SERVER_URL } from '../../tests/env'
 
-jestOpenAPI(schema as unknown as never)
+const dummyRequest = async (path: string) => {
+  const target = `${SERVER_URL}/${path}`
+  const request = new Request(target, {
+    method: 'GET',
+  })
+  const response: Response = await router.handle(request)
+  return {
+    status: response.status,
+    req: {
+      path: target,
+      method: request.method,
+    },
+    body: await response.json(),
+  }
+}
+
+beforeAll(() => {
+  jestOpenAPI(schema as unknown as never)
+})
 
 describe('ip', () => {
   routes.forEach(({ path }) => {
     describe(path, () => {
       it(`/${path}/current`, async () => {
-        const res = await axios.get(`${TEST_SERVER_URL}/${path}/current`)
+        const res = await dummyRequest(`${path}/current`)
         expect(res.status).toEqual(200)
         expect(res).toSatisfyApiSpec()
       })
       it(`/${path}/history`, async () => {
-        const res = await axios.get(`${TEST_SERVER_URL}/${path}/history`)
+        const res = await dummyRequest(`${path}/history`)
         expect(res.status).toEqual(200)
         expect(res).toSatisfyApiSpec()
       })
-      it(`/${path}/:season`, async () => {
-        const res = await axios.get(`${TEST_SERVER_URL}/${path}/1`)
+      it(`/${path}/:season (200)`, async () => {
+        const res = await dummyRequest(`${path}/1`)
         expect(res.status).toEqual(200)
+        expect(res).toSatisfyApiSpec()
+      })
+      it(`/${path}/:season (404)`, async () => {
+        const res = await dummyRequest(`${path}/999999`)
+        expect(res.status).toEqual(404)
         expect(res).toSatisfyApiSpec()
       })
     })

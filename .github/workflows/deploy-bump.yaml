@@ -5,18 +5,32 @@ on:
     branches:
       - main
     paths:
-      - 'public-api.json'
+      - 'package.json'
+      - 'scripts/openapi.ts'
+      - 'src/**'
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      SCHEMA_FILE: './schema.json'
     name: Deploy
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'yarn'
+      - name: Setup yarn
+        run: npm install -g yarn
+      - name: Install
+        run: yarn install --frozen-lockfile
+      - name: Generate
+        run: yarn generate $SCHEMA_FILE
       - name: Deploy API documentation
         uses: bump-sh/github-action@v1
         with:
           doc: ${{secrets.BUMP_DOC}}
           token: ${{secrets.BUMP_TOKEN}}
-          file: ./public-api.json
+          file: ${{env.SCHEMA_FILE}}

@@ -20,11 +20,12 @@ export const newAdaptor = <T extends CommonSeason>({
   getProgress,
 }: Props<T>): Adaptor => {
   const tags = [ip]
+  const operationIP = ip.replace(' ', '-')
   class currentSeason extends OpenAPIRoute {
     static schema = {
       tags,
       summary: `Get Current Season`,
-      operationId: `${ip}-current-season`,
+      operationId: `${operationIP}-current-season`,
       parameters: {},
       responses: {
         '200': {
@@ -58,7 +59,7 @@ export const newAdaptor = <T extends CommonSeason>({
     static schema = {
       tags,
       summary: `Get Season`,
-      operationId: `${ip}-get-season`,
+      operationId: `${operationIP}-get-season`,
       parameters: {
         season: Path(Number, {
           description: 'Season number',
@@ -95,7 +96,7 @@ export const newAdaptor = <T extends CommonSeason>({
     static schema = {
       tags,
       summary: `Get Season History`,
-      operationId: `${ip}-season-history`,
+      operationId: `${operationIP}-season-history`,
       parameters: {},
       responses: {
         '200': {

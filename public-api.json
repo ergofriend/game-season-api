@@ -14,11 +14,11 @@
   "paths": {
     "/apex/current": {
       "get": {
-        "operationId": "get_currentSeason",
+        "operationId": "apex-legends-current-season",
         "tags": [
           "Apex Legends"
         ],
-        "summary": "Current Apex Legends Season",
+        "summary": "Get Current Season",
         "parameters": [],
         "responses": {
           "200": {
@@ -115,11 +115,11 @@
     },
     "/apex/history": {
       "get": {
-        "operationId": "get_getHistory",
+        "operationId": "apex-legends-season-history",
         "tags": [
           "Apex Legends"
         ],
-        "summary": "Apex Legends Season History",
+        "summary": "Get Season History",
         "parameters": [],
         "responses": {
           "200": {
@@ -177,11 +177,11 @@
     },
     "/apex/{season}": {
       "get": {
-        "operationId": "get_getSeason",
+        "operationId": "apex-legends-get-season",
         "tags": [
           "Apex Legends"
         ],
-        "summary": "Apex Legends Season",
+        "summary": "Get Season",
         "parameters": [
           {
             "description": "Season number",
@@ -266,11 +266,11 @@
     },
     "/valorant/current": {
       "get": {
-        "operationId": "get_currentSeason",
+        "operationId": "valorant-current-season",
         "tags": [
           "Valorant"
         ],
-        "summary": "Current Valorant Season",
+        "summary": "Get Current Season",
         "parameters": [],
         "responses": {
           "200": {
@@ -388,11 +388,11 @@
     },
     "/valorant/history": {
       "get": {
-        "operationId": "get_getHistory",
+        "operationId": "valorant-season-history",
         "tags": [
           "Valorant"
         ],
-        "summary": "Valorant Season History",
+        "summary": "Get Season History",
         "parameters": [],
         "responses": {
           "200": {
@@ -471,11 +471,11 @@
     },
     "/valorant/{season}": {
       "get": {
-        "operationId": "get_getSeason",
+        "operationId": "valorant-get-season",
         "tags": [
           "Valorant"
         ],
-        "summary": "Valorant Season",
+        "summary": "Get Season",
         "parameters": [
           {
             "description": "Season number",

@@ -20,7 +20,7 @@ export const newAdaptor = <T extends CommonSeason>({
   getProgress,
 }: Props<T>): Adaptor => {
   const tags = [ip]
-  const operationIP = ip.replace(' ', '-')
+  const operationIP = ip.replace(' ', '-').toLowerCase()
   class currentSeason extends OpenAPIRoute {
     static schema = {
       tags,

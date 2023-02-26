@@ -1,34 +1,11 @@
-import { OpenAPIRouter } from '@cloudflare/itty-router-openapi'
-
-import { applyIPEndpoint } from './ip'
-
-export const SERVER_URL = 'https://game-season-api.kasu.dev'
-
-export const router = OpenAPIRouter({
-  schema: {
-    info: {
-      title: 'Game Season API',
-      description: 'https://github.com/ergofriend/game-season-api',
-      version: '1.0',
-    },
-    servers: [
-      {
-        url: SERVER_URL,
-        description: 'Production',
-      },
-    ],
-  },
-})
-applyIPEndpoint(router)
-router.all('*', () => new Response('Not Found', { status: 404 }))
+import { DOCUMENT_URL, router } from './router'
 
 export default {
   // fetch: router.handle,
   fetch: (request: Request) => {
     // Redirect root to the docs
     const path = new URL(request.url).pathname
-    if (path === '/')
-      return Response.redirect('https://bump.sh/kasu/doc/game-season-api', 301)
+    if (path === '/') return Response.redirect(DOCUMENT_URL, 301)
 
     if (path === '/health') return new Response(null, { status: 200 })
 

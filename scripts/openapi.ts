@@ -1,9 +1,13 @@
 import * as fs from 'fs'
 
-import { router } from '../src/index'
+import { schema } from '../src/schema'
 
-// Get the Schema from itty-router-openapi
-const schema = router.schema
+const path = process.argv[2]
 
-// Write the final schema
-fs.writeFileSync('./public-api.json', JSON.stringify(schema, null, 2))
+if (!path || !path.endsWith('.json')) {
+  console.log(`path: ${path}`)
+  console.error('Please provide a path to the schema json file.')
+  process.exit(1)
+}
+
+fs.writeFileSync(path, JSON.stringify(schema, null, 2))

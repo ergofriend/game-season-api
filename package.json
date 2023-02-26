@@ -6,10 +6,11 @@
   "license": "MIT",
   "scripts": {
     "generate": "node --require esbuild-register ./scripts/openapi.ts",
+    "generate:act": "act -W .github/workflows/deploy-bump.yaml workflow_dispatch --container-architecture linux/amd64",
     "dev": "wrangler dev",
     "build": "wrangler publish --dry-run --outdir=dist",
     "test": "jest",
-    "test:act": "act -W .github/workflows/test.yaml workflow_dispatch  --container-architecture linux/amd64"
+    "test:act": "act -W .github/workflows/test.yaml workflow_dispatch --container-architecture linux/amd64"
   },
   "dependencies": {
     "@cloudflare/itty-router-openapi": "^0.0.14"

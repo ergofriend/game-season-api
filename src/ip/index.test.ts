@@ -1,8 +1,8 @@
 import jestOpenAPI from 'jest-openapi'
 
 import { routes } from '.'
-import { router, SERVER_URL } from '..'
-import schema from '../../public-api.json'
+import { router, SERVER_URL } from '../router'
+import { schema } from '../schema'
 
 const dummyRequest = async (path: string) => {
   const target = `${SERVER_URL}/${path}`
@@ -21,7 +21,7 @@ const dummyRequest = async (path: string) => {
 }
 
 beforeAll(() => {
-  jestOpenAPI(schema as unknown as never)
+  jestOpenAPI(schema)
 })
 
 describe('ip', () => {

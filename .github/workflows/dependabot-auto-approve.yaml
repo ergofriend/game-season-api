@@ -23,4 +23,4 @@ jobs:
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
       - name: Enable auto-merge
-        run: gh pr merge --auto "$PR_URL"
+        run: gh pr merge --merge --auto "$PR_URL"

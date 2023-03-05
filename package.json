@@ -13,11 +13,11 @@
     "test:act": "act -W .github/workflows/test.yaml workflow_dispatch --container-architecture linux/amd64"
   },
   "dependencies": {
-    "@cloudflare/itty-router-openapi": "^0.0.14"
+    "@cloudflare/itty-router-openapi": "^0.0.15"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.21.0",
-    "@cloudflare/workers-types": "^4.20230221.0",
+    "@cloudflare/workers-types": "^4.20230228.0",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
     "@jest/globals": "^29.4.3",
     "@types/jest": "^29.4.0",

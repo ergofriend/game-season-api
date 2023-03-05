@@ -411,10 +411,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cloudflare/itty-router-openapi@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.npmjs.org/@cloudflare/itty-router-openapi/-/itty-router-openapi-0.0.14.tgz"
-  integrity sha512-+GxdM/No1NI1qZRT2AwMXpZ5cWVINJBO8kaCXqim2/BBfAvAOsw1oE72j2gtvzY+zE/Gr3Mrf9u+ECDb85Dcbg==
+"@cloudflare/itty-router-openapi@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@cloudflare/itty-router-openapi/-/itty-router-openapi-0.0.15.tgz#51e490fb2f80470e78fa33a906b2864e0850218f"
+  integrity sha512-Npu/dQ1jOqhuQCkiWQZK/iYG68335D0zRf4i4ejfhjZfIjuRLgaGGfDAGyK88Bn03XBZH3ywI9k5g8tnesdDrA==
   dependencies:
     itty-router "^2.6.6"
 
@@ -425,10 +425,10 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudflare/workers-types@^4.20230221.0":
-  version "4.20230221.0"
-  resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-4.20230221.0.tgz#d0cca6d1100f5aaf4550db23011a5dc9687a2ef3"
-  integrity sha512-Ge8csuFQMNv3hd8r85PFWv4KV6bHAtKoBaanTkjbbeJS+mizoiBn4OBva0CFQiGfRJklFSGd4OxuCuiK05kogg==
+"@cloudflare/workers-types@^4.20230228.0":
+  version "4.20230228.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-4.20230228.0.tgz#f2311f4f8943f15d097426bcb9a0e7d3aa5b5c1d"
+  integrity sha512-tDaqH3DrKmDoe/YrCnzVSqjNH6GnUOOajv2Ztj2h7BPLFyYTb81iCkARgb+G4bpxhn7y4f1KxxDT2+Yp4rt7Hg==
 
 "@esbuild-plugins/node-globals-polyfill@^0.1.1":
   version "0.1.1"

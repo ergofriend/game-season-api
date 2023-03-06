@@ -125,12 +125,12 @@ export const data: SeasonData = {
       {
         number: 1,
         start: '2023-01-11T00:00:00Z',
-        end: '2023-03-10T00:00:00Z',
+        end: '2023-03-08T00:00:00Z',
       },
       {
         number: 2,
-        start: '',
-        end: '',
+        start: '2023-03-08T00:00:00Z',
+        end: '2023-05-05T00:00:00Z',
       },
       {
         number: 3,

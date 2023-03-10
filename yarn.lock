@@ -3001,16 +3001,16 @@ jest-config@^29.5.0:
     slash "^3.0.0"
     strip-json-comments "^3.1.1"
 
-jest-dev-server@^8.0.3:
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/jest-dev-server/-/jest-dev-server-8.0.3.tgz#46c0921a3d36b09c9245fff564a00dbf106273b5"
-  integrity sha512-9GBgFJMtyfLFGjGIB8l74rxV8vgBKh+6qC/GpCpjW88aSVUhcEz7DEKqbpyYpyPxtgfiKgQw88MU+XkmICqlpA==
+jest-dev-server@^8.0.5:
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/jest-dev-server/-/jest-dev-server-8.0.5.tgz#c925300162b27bf6ea05b17fb8de3c405d7bad1d"
+  integrity sha512-pgf6R6r9z9Cf+9wGEXV24hIPYPPBPpJtETJm4O1hWtnaSiDshOsgQNOLB3EmoZIq+fAfZuLsuaxETf33GhJNGg==
   dependencies:
     chalk "^4.1.2"
     cwd "^0.10.0"
     find-process "^1.4.7"
     prompts "^2.4.2"
-    spawnd "^8.0.0"
+    spawnd "^8.0.5"
     tree-kill "^1.2.2"
     wait-on "^7.0.1"
 
@@ -4260,10 +4260,10 @@ sourcemap-codec@^1.4.8:
   resolved "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
   integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
 
-spawnd@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/spawnd/-/spawnd-8.0.0.tgz#ccde046b6fd8268f282fa0e007754dd9e590f415"
-  integrity sha512-fvzXTTDvz2mOygQc6XvOXCwcmiQ5qvFW/FSwDfkrg7aw89GyN7ubrsHO8Bcb4z+d4oV/Ck0ZjOIwbE3ZmZ3N3Q==
+spawnd@^8.0.5:
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/spawnd/-/spawnd-8.0.5.tgz#e3166d7c8c3d02200ee16d94318e0b56a7483c69"
+  integrity sha512-D+crPxX9sSXzF4o/3RjtNcc+PT+CQuSrLsq0VP1SQDy6ka3rD2wUmzkxhD1XlNEcNX0zccQEmPJI2xBYcdpR7Q==
   dependencies:
     signal-exit "^3.0.7"
     tree-kill "^1.2.2"

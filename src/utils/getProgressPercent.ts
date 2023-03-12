@@ -13,11 +13,7 @@ type ProgressPercentProp = {
  * @param end 終了日
  * @returns 進行度 0.0 ~ 100.0
  */
-export const getProgressPercent = ({
-  start,
-  end,
-  now,
-}: ProgressPercentProp) => {
+export const getProgressPercent = ({ start, end, now }: ProgressPercentProp) => {
   if (now.getTime() < start.getTime()) return 0
   if (end.getTime() < now.getTime()) return 100
   const totalTime = end.getTime() - start.getTime()

@@ -4,11 +4,7 @@ import { Adaptor, Route } from '../type'
 import { apex } from './apex-legends'
 import { valorant } from './valorant'
 
-const applyBase = (
-  router: OpenAPIRouterSchema,
-  ip: string,
-  adaptor: Adaptor,
-) => {
+const applyBase = (router: OpenAPIRouterSchema, ip: string, adaptor: Adaptor) => {
   router.get(`/${ip}/current`, adaptor.currentSeason)
   router.get(`/${ip}/history`, adaptor.getHistory)
   router.get(`/${ip}/:season`, adaptor.getSeason)

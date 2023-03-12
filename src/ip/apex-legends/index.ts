@@ -5,10 +5,7 @@ import { ProgressSchema, Season, SeasonSchema } from './type'
 
 const getProgress = (season: Season) => {
   const splitNumber = Date.now() < new Date(season.split).getTime() ? 1 : 2
-  const splitPeriod =
-    splitNumber === 1
-      ? [season.start, season.split]
-      : [season.split, season.end]
+  const splitPeriod = splitNumber === 1 ? [season.start, season.split] : [season.split, season.end]
 
   return {
     split: splitNumber,

@@ -83,8 +83,7 @@ export const newAdaptor = <T extends CommonSeason>({
 
     async handle(props: HandleProps) {
       const seasonNumber = props.params['season']
-      if (!seasonNumber)
-        return newResponse({ message: 'Not found season' }, 404)
+      if (!seasonNumber) return newResponse({ message: 'Not found season' }, 404)
 
       const season: T | undefined = data[Number(seasonNumber)]
       if (!season) return newResponse({ message: 'Not found season' }, 404)

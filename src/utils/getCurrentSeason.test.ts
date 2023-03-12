@@ -3,8 +3,7 @@ import dayjs from 'dayjs'
 import { CommonSeason } from '../type'
 import { getCurrentSeason } from './getCurrentSeason'
 
-const generateDate = (day: number) =>
-  dayjs().add(day, 'day').format('YYYY-MM-DDTHH:mm:ss[Z]')
+const generateDate = (day: number) => dayjs().add(day, 'day').format('YYYY-MM-DDTHH:mm:ss[Z]')
 
 describe('getCurrentSeason', () => {
   it('今のシーズンが取得できる', () => {

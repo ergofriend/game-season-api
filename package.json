@@ -10,7 +10,10 @@
     "dev": "wrangler dev",
     "build": "wrangler publish --dry-run --outdir=dist",
     "test": "jest",
-    "test:act": "act -W .github/workflows/test.yaml workflow_dispatch --container-architecture linux/amd64"
+    "test:act": "act -W .github/workflows/test.yaml workflow_dispatch --container-architecture linux/amd64",
+    "lint": "run-s lint:eslint lint:prettier",
+    "lint:eslint": "eslint --ext ts,tsx --fix .",
+    "lint:prettier": "prettier --write ."
   },
   "dependencies": {
     "@cloudflare/itty-router-openapi": "^0.0.15"
@@ -34,6 +37,7 @@
     "jest": "^29.5.0",
     "jest-dev-server": "^8.0.5",
     "jest-openapi": "^0.14.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.8.4",
     "ts-jest": "^29.0.5",
     "typescript": "^4.9.5",

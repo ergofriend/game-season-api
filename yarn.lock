@@ -475,12 +475,12 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cloudflare/itty-router-openapi@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@cloudflare/itty-router-openapi/-/itty-router-openapi-0.0.15.tgz#51e490fb2f80470e78fa33a906b2864e0850218f"
-  integrity sha512-Npu/dQ1jOqhuQCkiWQZK/iYG68335D0zRf4i4ejfhjZfIjuRLgaGGfDAGyK88Bn03XBZH3ywI9k5g8tnesdDrA==
+"@cloudflare/itty-router-openapi@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@cloudflare/itty-router-openapi/-/itty-router-openapi-0.1.0.tgz#20a82465a33728ff321d789cc72f636f5914f450"
+  integrity sha512-7SaET9THG/n0p+ze7cV3Qwly2hUJCVxn9s6sEF4LXXbpW5/aqg68pLdQCb4LmByb1FlgHxTCWByrc8pVsk8mxQ==
   dependencies:
-    itty-router "^2.6.6"
+    itty-router "^3.0.12"
 
 "@cloudflare/kv-asset-handler@^0.2.0":
   version "0.2.0"
@@ -3216,10 +3216,10 @@ istanbul-reports@^3.1.3:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-itty-router@^2.6.6:
-  version "2.6.6"
-  resolved "https://registry.npmjs.org/itty-router/-/itty-router-2.6.6.tgz"
-  integrity sha512-hIPHtXGymCX7Lzb2I4G6JgZFE4QEEQwst9GORK7sMYUpJvLfy4yZJr95r04e8DzoAnj6HcxM2m4TbK+juu+18g==
+itty-router@^3.0.12:
+  version "3.0.12"
+  resolved "https://registry.yarnpkg.com/itty-router/-/itty-router-3.0.12.tgz#98eee28dd3b3a0d0190125f4328b8c62b816e8e9"
+  integrity sha512-s98XTPhle6GGbaFf0kYrOD3Q8gyhnqvOqkwYijC3AmkceNKqWUp13YHg6dWmqmVv4pP7l7c94XI92I0EXVGO0w==
 
 jake@^10.8.5:
   version "10.8.5"

@@ -1891,10 +1891,10 @@ builtins@^5.0.0:
   dependencies:
     semver "^7.0.0"
 
-bump-cli@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/bump-cli/-/bump-cli-2.5.0.tgz#f9091533cd1791b48cb62051c03438b5a9b98f3d"
-  integrity sha512-0Y1Dle+7++DZ628wifh6QAcJmZyqMtNWMMp5E22LoL19xaGWjHZOuuErBPRatKfZrFEHZGBZsOaChM/jnNxEcg==
+bump-cli@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/bump-cli/-/bump-cli-2.6.0.tgz#7eee943b655eeedb8c868f71e49fa50a2ce59361"
+  integrity sha512-Wv0bPVvBhUaujmj3oL6c5qESAPfEbFO8vTbDko98Fu+ULWNrFNUgTtm4a2IWMHEGjNJlV7s0V+05TtbiFxfLCQ==
   dependencies:
     "@apidevtools/json-schema-ref-parser" "^9.0.7"
     "@asyncapi/specs" "^4.0.1"

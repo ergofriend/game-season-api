@@ -111,6 +111,12 @@ export const data: SeasonData = {
     name: 'Revelry',
     start: '2023-02-14T00:00:00Z',
     split: '2023-04-05T00:00:00Z',
-    end: '2023-05-14T00:00:00Z',
+    end: '2023-05-10T00:00:00Z',
+  },
+  17: {
+    number: 17,
+    name: 'Arsenal',
+    start: '2023-05-10T00:00:00Z',
+    end: '2023-08-10T00:00:00Z',
   },
 }

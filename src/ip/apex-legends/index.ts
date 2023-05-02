@@ -4,6 +4,19 @@ import { data } from './data'
 import { ProgressSchema, Season, SeasonSchema } from './type'
 
 const getProgress = (season: Season) => {
+  // Split was deleted from season 17
+  if (season.split === undefined) {
+    return {
+      seasonProgress: String(
+        getProgressPercent({
+          start: new Date(season.start),
+          end: new Date(season.end),
+          now: new Date(),
+        }),
+      ),
+    }
+  }
+
   const splitNumber = Date.now() < new Date(season.split).getTime() ? 1 : 2
   const splitPeriod = splitNumber === 1 ? [season.start, season.split] : [season.split, season.end]
 

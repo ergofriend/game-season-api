@@ -21,7 +21,7 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.21.5",
     "@cloudflare/workers-types": "^4.20230518.0",
-    "@ianvs/prettier-plugin-sort-imports": "^4.0.1",
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@jest/globals": "^29.5.0",
     "@types/jest": "^29.5.2",
     "@types/jest-dev-server": "^5.0.0",

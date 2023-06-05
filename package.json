@@ -16,7 +16,7 @@
     "lint:prettier": "prettier --write ."
   },
   "dependencies": {
-    "@cloudflare/itty-router-openapi": "^0.1.4"
+    "@cloudflare/itty-router-openapi": "^0.1.5"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.21.5",

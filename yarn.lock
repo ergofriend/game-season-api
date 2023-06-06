@@ -447,10 +447,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@cloudflare/itty-router-openapi@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@cloudflare/itty-router-openapi/-/itty-router-openapi-0.1.4.tgz#c209f4b21d403509db8a448e825f2a6a2e720a65"
-  integrity sha512-NtnFBepdNxjPDtQ0iDIRH854ANA9fvbzMGl2MEW1DPX6w3ZGF24s6qA6bb0NFUnvgYq8vUW4+nNzx0sS76YYwg==
+"@cloudflare/itty-router-openapi@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@cloudflare/itty-router-openapi/-/itty-router-openapi-0.1.6.tgz#c0ca5526d7434a5067b4fa1fef0a6ed603ac265b"
+  integrity sha512-5lw8bSb4nqKgmK2kplmpZSYyQC0hIu7lemqMfzM5VMNVJEnMGiuPm7e6e0rzmN424FQduIaLEbN/Y7TH27YaQg==
   dependencies:
     itty-router "^3.0.12"
 

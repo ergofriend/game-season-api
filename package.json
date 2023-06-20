@@ -27,7 +27,7 @@
     "@types/jest-dev-server": "^5.0.0",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
-    "@typescript-eslint/parser": "^5.59.11",
+    "@typescript-eslint/parser": "^5.60.0",
     "axios": "^1.4.0",
     "bump-cli": "^2.7.0",
     "dayjs": "^1.11.8",

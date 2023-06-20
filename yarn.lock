@@ -572,10 +572,10 @@
     picocolors "^1.0.0"
     sisteransi "^1.0.5"
 
-"@cloudflare/itty-router-openapi@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@cloudflare/itty-router-openapi/-/itty-router-openapi-0.1.7.tgz#910d3f44b40a527bc27f63bd0937983b4a2d39a7"
-  integrity sha512-ER4MJw+3K4hgu/aGmA9kYciUdW0cOWsgOJFSOoUzsEhRMckf2pHxggfU8bHjJ3Jw/VySI1kMicDM9LVnHGW/pw==
+"@cloudflare/itty-router-openapi@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@cloudflare/itty-router-openapi/-/itty-router-openapi-0.1.8.tgz#d8f7d3cbcf0430cc3d860b88a2b8861c2e0d10e5"
+  integrity sha512-afCld9a9PJvT3Jo05pTIM11Z2mTx0/Lz7VQ50G6m2APQgJ/nvccLSkOCachybYs4bd2WEeTc3CY4piCkjeBjlw==
   dependencies:
     itty-router "^4.0.11"
 

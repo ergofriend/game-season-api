@@ -120,7 +120,7 @@ export const data: SeasonData = {
     number: 6,
     name: 'REVELATION',
     start: '2023-01-10T00:00:00Z',
-    end: '2023-06-24T00:00:00Z',
+    end: '2023-06-28T00:00:00Z',
     acts: [
       {
         number: 1,
@@ -135,7 +135,20 @@ export const data: SeasonData = {
       {
         number: 3,
         start: '2023-04-26T00:00:00Z',
-        end: '2023-06-28T00:00:00Z',
+        end: '2023-06-29T00:00:00Z',
+      },
+    ],
+  },
+  7: {
+    number: 7,
+    name: 'UNMADE',
+    start: '2023-06-28T00:00:00Z',
+    end: '2023-11-28T00:00:00Z',
+    acts: [
+      {
+        number: 1,
+        start: '2023-06-28T00:00:00Z',
+        end: '2023-08-28T00:00:00Z',
       },
     ],
   },

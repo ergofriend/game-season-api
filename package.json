@@ -30,7 +30,7 @@
     "@typescript-eslint/parser": "^5.60.1",
     "axios": "^1.4.0",
     "bump-cli": "^2.7.0",
-    "dayjs": "^1.11.8",
+    "dayjs": "^1.11.9",
     "esbuild-register": "^3.4.2",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",

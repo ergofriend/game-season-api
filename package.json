@@ -23,7 +23,7 @@
     "@cloudflare/workers-types": "^4.20230628.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@jest/globals": "^29.6.1",
-    "@types/jest": "^29.5.2",
+    "@types/jest": "^29.5.3",
     "@types/jest-dev-server": "^5.0.0",
     "@types/node": "^20.4.1",
     "@typescript-eslint/eslint-plugin": "^5.61.0",

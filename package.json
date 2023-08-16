@@ -38,7 +38,7 @@
     "jest-dev-server": "^9.0.0",
     "jest-openapi": "^0.14.2",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6",
     "wait-port": "^1.0.4",
